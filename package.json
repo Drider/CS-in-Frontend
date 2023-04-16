@@ -4,7 +4,7 @@
   "description": "CS in frontend homeworks",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "lint": "./node_modules/.bin/eslint . --ext .ts"
   },
   "repository": {
@@ -19,6 +19,7 @@
   "homepage": "https://github.com/Drider/CS-in-Frontend#readme",
   "dependencies": {},
   "devDependencies": {
+    "@types/jest": "29.5.0",
     "@typescript-eslint/eslint-plugin": "^5.58.0",
     "@typescript-eslint/parser": "^5.58.0",
     "eslint": "^8.38.0",
@@ -26,6 +27,8 @@
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-n": "^15.7.0",
     "eslint-plugin-promise": "^6.1.1",
+    "jest": "29.5.0",
+    "ts-jest": "29.1.0",
     "typescript": "^5.0.4"
   }
 }
