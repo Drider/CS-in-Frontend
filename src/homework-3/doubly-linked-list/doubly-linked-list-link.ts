@@ -1,13 +1,13 @@
 interface LinkArgs<T> {
   value: T;
-  prev?: Link<T>;
-  next?: Link<T>;
+  prev?: DoublyLinkedListLink<T>;
+  next?: DoublyLinkedListLink<T>;
 }
 
-export class Link<T> {
+export class DoublyLinkedListLink<T> {
   value: T;
-  prev?: Link<T> = null;
-  next?: Link<T> = null;
+  prev?: DoublyLinkedListLink<T> = null;
+  next?: DoublyLinkedListLink<T> = null;
 
   constructor({
     value,
