@@ -51,6 +51,7 @@ module.exports = {
     'object-shorthand': ['error', 'properties'],
     'arrow-body-style': ['error', 'as-needed'],
     'max-statements-per-line': 'error',
+    'eol-last': ['error', 'always'],
     '@typescript-eslint/indent': ['error', 2],
   },
 };
