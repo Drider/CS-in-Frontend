@@ -68,15 +68,15 @@ describe('DoublyLinkedList:', () => {
     list.addEnd(2);
     list.addEnd(3);
 
-    list.removeStart();
+    expect(list.removeStart()).toBe(1);
     expect(list.first.value).toBe(2);
 
-    list.removeStart();
+    expect(list.removeStart()).toBe(2);
     expect(list.first.value).toBe(3);
     expect(list.last.value).toBe(3);
 
-    list.removeStart();
-    list.removeStart();
+    expect(list.removeStart()).toBe(3);
+    expect(list.removeStart()).toBeNull();
     expect(list.first).toBeNull();
     expect(list.last).toBeNull();
   });
@@ -86,15 +86,15 @@ describe('DoublyLinkedList:', () => {
     list.addEnd(2);
     list.addEnd(3);
 
-    list.removeEnd();
+    expect(list.removeEnd()).toBe(3);
     expect(list.last.value).toBe(2);
 
-    list.removeEnd();
+    expect(list.removeEnd()).toBe(2);
     expect(list.last.value).toBe(1);
     expect(list.first.value).toBe(1);
 
-    list.removeEnd();
-    list.removeEnd();
+    expect(list.removeEnd()).toBe(1);
+    expect(list.removeEnd()).toBeNull();
     expect(list.last).toBeNull();
     expect(list.first).toBeNull();
   });
