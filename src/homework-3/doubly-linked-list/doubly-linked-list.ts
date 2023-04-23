@@ -15,7 +15,7 @@ export class DoublyLinkedList<T> {
     }
   }
 
-  get isEmpty(): boolean {
+  get isEmpty() {
     return this.#first == null;
   }
 
@@ -57,10 +57,12 @@ export class DoublyLinkedList<T> {
     this.#last = link;
   }
 
-  removeStart() {
+  removeStart(): Nullable<T> {
     if (this.isEmpty) {
-      return;
+      return null;
     }
+
+    const removedValue = this.#first.value;
 
     if (this.#first.next == null) {
       this.#last = null;
@@ -68,13 +70,17 @@ export class DoublyLinkedList<T> {
       this.#first.next.prev = null;
     }
 
-    this.#first = this.#first.next;
+    this.#first = this.#first.next ?? null;
+
+    return removedValue ?? null;
   }
 
-  removeEnd() {
+  removeEnd(): Nullable<T> {
     if (this.isEmpty) {
-      return;
+      return null;
     }
+
+    const removedValue = this.#last.value;
 
     if (this.#last.prev == null) {
       this.#first = null;
@@ -82,7 +88,14 @@ export class DoublyLinkedList<T> {
       this.#last.prev.next = null;
     }
 
-    this.#last = this.#last.prev;
+    this.#last = this.#last.prev ?? null;
+
+    return removedValue ?? null;
+  }
+
+  clear() {
+    this.#first = null;
+    this.#last = null;
   }
 
   [Symbol.iterator]() {
